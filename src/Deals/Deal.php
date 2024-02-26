@@ -151,4 +151,14 @@ class Deal
     {
         return new Quotations($this->teamleader);
     }
+
+    /**
+     * Get a list of deal sources.
+     */
+    public function sources($data = [])
+    {
+        return $this->teamleader->getCall('dealSources.list', [
+            'body' => json_encode($data),
+        ]);
+    }
 }
